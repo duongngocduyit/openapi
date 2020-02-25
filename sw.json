@@ -26,25 +26,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
-                  },
-                  "nullable": true
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
-                  },
-                  "nullable": true
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -77,25 +59,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
-                  },
-                  "nullable": true
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
-                  },
-                  "nullable": true
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -128,25 +92,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Product"
-                  },
-                  "nullable": true
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Product"
-                  },
-                  "nullable": true
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -179,25 +125,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Product"
-                  },
-                  "nullable": true
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Product"
-                  },
-                  "nullable": true
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -230,25 +158,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Store"
-                  },
-                  "nullable": true
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Store"
-                  },
-                  "nullable": true
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -281,25 +191,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Store"
-                  },
-                  "nullable": true
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Store"
-                  },
-                  "nullable": true
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
