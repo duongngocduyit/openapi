@@ -213,15 +213,21 @@
         "properties": {
           "langCode": {
             "type": "string",
-            "nullable": true
+            "description": "Mã ngôn ngữ",
+            "nullable": true,
+            "example": "vi"
           },
           "name": {
             "type": "string",
-            "nullable": true
+            "description": "Tên của trường dữ liệu",
+            "nullable": true,
+            "example": "Name"
           },
           "value": {
             "type": "string",
-            "nullable": true
+            "description": "Ngày sửa mới nhất",
+            "nullable": true,
+            "example": "Cà phê sữa"
           }
         },
         "nullable": true
@@ -231,42 +237,59 @@
         "properties": {
           "code": {
             "type": "string",
-            "nullable": true
+            "description": "Mã số",
+            "nullable": true,
+            "example": "C0002"
           },
           "parentCode": {
             "type": "string",
-            "nullable": true
+            "description": "Mã số cha",
+            "nullable": true,
+            "example": "C0001"
           },
           "name": {
             "type": "string",
-            "nullable": true
+            "description": "Tên",
+            "nullable": true,
+            "example": "Cà phê BMT"
           },
           "decscription": {
             "type": "string",
-            "nullable": true
+            "description": "Miêu tả",
+            "nullable": true,
+            "example": "Cà phê BMT đậm đà hương vị tự nhiên"
           },
           "order": {
             "type": "integer",
-            "format": "int32"
+            "description": "Độ ưu tiên sắp xếp",
+            "format": "int32",
+            "example": 100
           },
           "localizers": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Localizer"
             },
+            "description": "Đa ngôn ngữ",
             "nullable": true
           },
           "createdBy": {
             "type": "string",
-            "nullable": true
+            "description": "Được tạo bởi",
+            "nullable": true,
+            "example": "Ong_Thang"
           },
           "createdDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Ngày tạo",
+            "format": "date-time",
+            "example": "2020-02-25T13:39:04.6730000+07:00"
           },
           "modifiedDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Ngày sửa mới nhất",
+            "format": "date-time",
+            "example": "2020-02-25T13:39:04.6730000+07:00"
           }
         },
         "nullable": true
