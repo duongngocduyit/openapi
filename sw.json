@@ -600,14 +600,16 @@
       }
     },
     "securitySchemes": {
-      "API-KEY": {
+      "ClientId": {
         "type": "apiKey",
-        "name": "X-API-KEY",
+        "description": "ClientId needed to access the endpoints. X-CLIENT-ID: Bigin",
+        "name": "X-CLIENT-ID",
         "in": "header"
       },
-      "API-ID": {
+      "ClientSecret": {
         "type": "apiKey",
-        "name": "X-APP-ID",
+        "description": "ClientSecret needed to access the endpoints. X-CLIENT-ID: e9fd92b4e8a79b1c0b046ec770197f60",
+        "name": "X-CLIENT-SECRET",
         "in": "header"
       }
     }
