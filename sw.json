@@ -17,7 +17,6 @@
             "name": "fromDate",
             "in": "query",
             "description": "",
-            "required": true,
             "schema": {
               "type": "string",
               "format": "date-time"
@@ -80,13 +79,26 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
                   }
                 }
               }
             }
+          },
+          "500": {
+            "description": "Server Error"
           },
           "401": {
             "description": "Unauthorized"
@@ -99,6 +111,8 @@
         "tags": [
           "Product"
         ],
+        "summary": "Lấy danh sách những sản phẩm có ngày modifiedDate lớn hơn hoặc bằng fromDate .",
+        "description": "Sample request:\r\n\r\n    GET Product/ListByModifiedDate\r\n\t{\r\n\t    \"fromDate\": \"2020-01-25T13:39:04.6730000+07:00\",\r\n\t}\r\n\t\r\nSample response:\r\n\r\n\t[\r\n\t  {\r\n\t    \"sku\": \"P0001\",\r\n\t    \"price\": 20000,\r\n\t    \"name\": \"Cà phê sữa\",\r\n\t    \"shortDescription\": \"Cà phê sữa tự nhiên thơm ngon, bổ dưỡng\",\r\n\t    \"description\": \"Câu chuyện được kể lại rằng trong Thế Chiến Thứ II, những binh sĩ Mỹ đóng quân trên đất Ý đã rơi vào tình trạng \\\"say bí tỉ\\\" khi lần đầu tiếp xúc với hương vị Espresso mạnh mẽ vùng bản địa.Vốn không quen với độ sánh đặc của cà phê nơi đây, họ đã nảy ra ý tưởng thêm nước nóng vào cốc Espresso để làm loãng nó. Và từ đó, Americano của người Mỹ (American) ra đời.\",\r\n\t    \"order\": 100,\r\n\t    \"createdBy\": \"Ong_Duc\",\r\n\t    \"createdDate\": \"2020-02-25T13:39:04.6730000+07:00\",\r\n\t    \"modifiedDate\": \"2020-02-25T13:39:04.6730000+07:00\",\r\n\t    \"localizers\": [\r\n\t      {\r\n\t        \"langCode\": \"vi\",\r\n\t        \"name\": \"Name\",\r\n\t        \"value\": \"Cà phê sữa\"\r\n\t      }\r\n\t    ],\r\n\t    \"categories\": [\r\n\t      {\r\n\t        \"code\": \"C0002\",\r\n\t        \"parentCode\": \"C0001\",\r\n\t        \"name\": \"Cà phê BMT\",\r\n\t        \"decscription\": \"Cà phê BMT đậm đà hương vị tự nhiên\",\r\n\t        \"order\": 100,\r\n\t        \"localizers\": [\r\n\t          {\r\n\t            \"langCode\": \"vi\",\r\n\t            \"name\": \"Name\",\r\n\t            \"value\": \"Cà phê sữa\"\r\n\t          }\r\n\t        ],\r\n\t        \"createdBy\": \"Ong_Thang\",\r\n\t        \"createdDate\": \"2020-02-25T13:39:04.6730000+07:00\",\r\n\t        \"modifiedDate\": \"2020-02-25T13:39:04.6730000+07:00\"\r\n\t      }\r\n\t    ],\r\n\t    \"imageInfos\": [\r\n\t      {\r\n\t        \"uri\": \"https://ongbaucoffee.vn/image/caphesua01/hinh001.jpg\",\r\n\t        \"description\": \"Hình sản phẩm màu vàng\",\r\n\t        \"localizers\": [\r\n\t          {\r\n\t            \"langCode\": \"vi\",\r\n\t            \"name\": \"Name\",\r\n\t            \"value\": \"Cà phê sữa\"\r\n\t          }\r\n\t        ]\r\n\t      }\r\n\t    ]\r\n\t  }\r\n\t]",
         "parameters": [
           {
             "name": "modifiedDate",
@@ -115,13 +129,29 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
                   }
                 }
               }
             }
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
@@ -131,6 +161,8 @@
         "tags": [
           "Product"
         ],
+        "summary": "Lấy danh sách những sản phẩm có ngày createdDate lớn hơn hoặc bằng fromDate .",
+        "description": "Sample request:\r\n\r\n    GET Product/ListByCreatedDate\r\n\t{\r\n\t    \"fromDate\": \"2020-01-25T13:39:04.6730000+07:00\",\r\n\t}\r\n\t\r\nSample response:\r\n\r\n\t[\r\n\t  {\r\n\t    \"sku\": \"P0001\",\r\n\t    \"price\": 20000,\r\n\t    \"name\": \"Cà phê sữa\",\r\n\t    \"shortDescription\": \"Cà phê sữa tự nhiên thơm ngon, bổ dưỡng\",\r\n\t    \"description\": \"Câu chuyện được kể lại rằng trong Thế Chiến Thứ II, những binh sĩ Mỹ đóng quân trên đất Ý đã rơi vào tình trạng \\\"say bí tỉ\\\" khi lần đầu tiếp xúc với hương vị Espresso mạnh mẽ vùng bản địa.Vốn không quen với độ sánh đặc của cà phê nơi đây, họ đã nảy ra ý tưởng thêm nước nóng vào cốc Espresso để làm loãng nó. Và từ đó, Americano của người Mỹ (American) ra đời.\",\r\n\t    \"order\": 100,\r\n\t    \"createdBy\": \"Ong_Duc\",\r\n\t    \"createdDate\": \"2020-02-25T13:39:04.6730000+07:00\",\r\n\t    \"modifiedDate\": \"2020-02-25T13:39:04.6730000+07:00\",\r\n\t    \"localizers\": [\r\n\t      {\r\n\t        \"langCode\": \"vi\",\r\n\t        \"name\": \"Name\",\r\n\t        \"value\": \"Cà phê sữa\"\r\n\t      }\r\n\t    ],\r\n\t    \"categories\": [\r\n\t      {\r\n\t        \"code\": \"C0002\",\r\n\t        \"parentCode\": \"C0001\",\r\n\t        \"name\": \"Cà phê BMT\",\r\n\t        \"decscription\": \"Cà phê BMT đậm đà hương vị tự nhiên\",\r\n\t        \"order\": 100,\r\n\t        \"localizers\": [\r\n\t          {\r\n\t            \"langCode\": \"vi\",\r\n\t            \"name\": \"Name\",\r\n\t            \"value\": \"Cà phê sữa\"\r\n\t          }\r\n\t        ],\r\n\t        \"createdBy\": \"Ong_Thang\",\r\n\t        \"createdDate\": \"2020-02-25T13:39:04.6730000+07:00\",\r\n\t        \"modifiedDate\": \"2020-02-25T13:39:04.6730000+07:00\"\r\n\t      }\r\n\t    ],\r\n\t    \"imageInfos\": [\r\n\t      {\r\n\t        \"uri\": \"https://ongbaucoffee.vn/image/caphesua01/hinh001.jpg\",\r\n\t        \"description\": \"Hình sản phẩm màu vàng\",\r\n\t        \"localizers\": [\r\n\t          {\r\n\t            \"langCode\": \"vi\",\r\n\t            \"name\": \"Name\",\r\n\t            \"value\": \"Cà phê sữa\"\r\n\t          }\r\n\t        ]\r\n\t      }\r\n\t    ]\r\n\t  }\r\n\t]",
         "parameters": [
           {
             "name": "createdDate",
@@ -147,13 +179,29 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
                   }
                 }
               }
             }
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
@@ -163,6 +211,8 @@
         "tags": [
           "Store"
         ],
+        "summary": "Lấy danh sách những cửa hàng có ngày modifiedDate lớn hơn hoặc bằng fromDate .",
+        "description": "Sample request:\r\n\r\n    GET Store/ListByModifiedDate\r\n\t{\r\n\t    \"fromDate\": \"2020-01-25T13:39:04.6730000+07:00\",\r\n\t}\r\n\t\r\nSample response:\r\n\r\n\t[\r\n\t  {\r\n\t    \"code\": \"S0001\",\r\n\t    \"description\": \"Cửa hàng điện điên phủ\",\r\n\t    \"address\": \"380 điện điên phủ\",\r\n\t    \"longitude\": 106.66295,\r\n\t    \"latitude\": 10.8071165,\r\n\t    \"provinceCode\": \"01\",\r\n\t    \"districtCode\": \"001\",\r\n\t    \"wardCode\": \"00013\",\r\n\t    \"phone\": \"0932123456\",\r\n\t    \"email\": \"obstore@gmail.com\",\r\n\t    \"openingTime\": \"7:30 AM\",\r\n\t    \"createdBy\": \"store_Admin\",\r\n\t    \"createdDate\": \"2020-02-25T13:39:04.6730000+07:00\",\r\n\t    \"modifiedDate\": \"2020-02-25T13:39:04.6730000+07:00\",\r\n\t    \"localizers\": [\r\n\t      {\r\n\t        \"langCode\": \"vi\",\r\n\t        \"name\": \"Name\",\r\n\t        \"value\": \"Cà phê sữa\"\r\n\t      }\r\n\t    ]\r\n\t  }\r\n\t]",
         "parameters": [
           {
             "name": "modifiedDate",
@@ -179,13 +229,29 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Store"
+                  "$ref": "#/components/schemas/Store"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
                   }
                 }
               }
             }
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
@@ -195,6 +261,8 @@
         "tags": [
           "Store"
         ],
+        "summary": "Lấy danh sách những cửa hàng có ngày createdDate lớn hơn hoặc bằng fromDate .",
+        "description": "Sample request:\r\n\r\n    GET Store/ListByCreatedDate\r\n\t{\r\n\t    \"fromDate\": \"2020-01-25T13:39:04.6730000+07:00\",\r\n\t}\r\n\t\r\nSample response:\r\n\r\n\t[\r\n\t  {\r\n\t    \"code\": \"S0001\",\r\n\t    \"description\": \"Cửa hàng điện điên phủ\",\r\n\t    \"address\": \"380 điện điên phủ\",\r\n\t    \"longitude\": 106.66295,\r\n\t    \"latitude\": 10.8071165,\r\n\t    \"provinceCode\": \"01\",\r\n\t    \"districtCode\": \"001\",\r\n\t    \"wardCode\": \"00013\",\r\n\t    \"phone\": \"0932123456\",\r\n\t    \"email\": \"obstore@gmail.com\",\r\n\t    \"openingTime\": \"7:30 AM\",\r\n\t    \"createdBy\": \"store_Admin\",\r\n\t    \"createdDate\": \"2020-02-25T13:39:04.6730000+07:00\",\r\n\t    \"modifiedDate\": \"2020-02-25T13:39:04.6730000+07:00\",\r\n\t    \"localizers\": [\r\n\t      {\r\n\t        \"langCode\": \"vi\",\r\n\t        \"name\": \"Name\",\r\n\t        \"value\": \"Cà phê sữa\"\r\n\t      }\r\n\t    ]\r\n\t  }\r\n\t]",
         "parameters": [
           {
             "name": "createdDate",
@@ -211,13 +279,29 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Store"
+                  "$ref": "#/components/schemas/Store"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
                   }
                 }
               }
             }
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
@@ -316,11 +400,15 @@
         "properties": {
           "uri": {
             "type": "string",
-            "nullable": true
+            "description": "Link của hình",
+            "nullable": true,
+            "example": "https://ongbaucoffee.vn/image/caphesua01/hinh001.jpg"
           },
           "description": {
             "type": "string",
-            "nullable": true
+            "description": "Miêu tả",
+            "nullable": true,
+            "example": "Hình sản phẩm màu vàng"
           },
           "localizers": {
             "type": "array",
@@ -337,39 +425,57 @@
         "properties": {
           "sku": {
             "type": "string",
-            "nullable": true
+            "description": "Mã Sản Phẩm",
+            "nullable": true,
+            "example": "P0001"
           },
           "price": {
             "type": "number",
-            "format": "double"
+            "description": "Gía",
+            "format": "double",
+            "example": 20000
           },
           "name": {
             "type": "string",
-            "nullable": true
+            "description": "Tên",
+            "nullable": true,
+            "example": "Cà phê sữa"
           },
           "shortDescription": {
             "type": "string",
-            "nullable": true
+            "description": "Miêu tả ngắn",
+            "nullable": true,
+            "example": "Cà phê sữa tự nhiên thơm ngon, bổ dưỡng"
           },
           "description": {
             "type": "string",
-            "nullable": true
+            "description": "Miêu tả đầy đủ",
+            "nullable": true,
+            "example": "Câu chuyện được kể lại rằng trong Thế Chiến Thứ II, những binh sĩ Mỹ đóng quân trên đất Ý đã rơi vào tình trạng \"say bí tỉ\" khi lần đầu tiếp xúc với hương vị Espresso mạnh mẽ vùng bản địa.Vốn không quen với độ sánh đặc của cà phê nơi đây, họ đã nảy ra ý tưởng thêm nước nóng vào cốc Espresso để làm loãng nó. Và từ đó, Americano của người Mỹ (American) ra đời."
           },
           "order": {
             "type": "integer",
-            "format": "int32"
+            "description": "Độ ưu tiên sắp xếp",
+            "format": "int32",
+            "example": 100
           },
           "createdBy": {
             "type": "string",
-            "nullable": true
+            "description": "Được tạo bởi",
+            "nullable": true,
+            "example": "Ong_Duc"
           },
           "createdDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Ngày tạo",
+            "format": "date-time",
+            "example": "2020-02-25T13:39:04.6730000+07:00"
           },
           "modifiedDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Ngày sửa mới nhất",
+            "format": "date-time",
+            "example": "2020-02-25T13:39:04.6730000+07:00"
           },
           "localizers": {
             "type": "array",
@@ -400,55 +506,87 @@
         "properties": {
           "code": {
             "type": "string",
-            "nullable": true
+            "description": "Mã Cửa hàng",
+            "nullable": true,
+            "example": "S0001"
           },
           "description": {
             "type": "string",
-            "nullable": true
+            "description": "Miêu tả",
+            "nullable": true,
+            "example": "Cửa hàng điện điên phủ"
           },
           "address": {
             "type": "string",
-            "nullable": true
+            "description": "Địa chỉ cửa hàng",
+            "nullable": true,
+            "example": "380 điện điên phủ"
           },
           "longitude": {
             "type": "number",
-            "format": "float"
+            "description": "Kinh độ của cửa hàng",
+            "format": "float",
+            "example": 106.66295
           },
           "latitude": {
             "type": "number",
-            "format": "float"
+            "description": "Vĩ độ của cửa hàng",
+            "format": "float",
+            "example": 10.8071165
           },
-          "province": {
+          "provinceCode": {
             "type": "string",
-            "nullable": true
+            "description": "Mã tỉnh",
+            "nullable": true,
+            "example": "01"
           },
-          "district": {
+          "districtCode": {
             "type": "string",
-            "nullable": true
+            "description": "Mã Quận",
+            "nullable": true,
+            "example": "001"
           },
-          "ward": {
+          "wardCode": {
             "type": "string",
-            "nullable": true
+            "description": "Mã Phường",
+            "nullable": true,
+            "example": "00013"
           },
           "phone": {
             "type": "string",
-            "nullable": true
+            "description": "Số điện thoại",
+            "nullable": true,
+            "example": "0932123456"
           },
           "email": {
             "type": "string",
-            "nullable": true
+            "description": "Email",
+            "nullable": true,
+            "example": "obstore@gmail.com"
+          },
+          "openingTime": {
+            "type": "string",
+            "description": "Giờ mở cửa",
+            "nullable": true,
+            "example": "7:30 AM"
           },
           "createdBy": {
             "type": "string",
-            "nullable": true
+            "description": "Được tạo bởi",
+            "nullable": true,
+            "example": "store_Admin"
           },
           "createdDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Ngày tạo",
+            "format": "date-time",
+            "example": "2020-02-25T13:39:04.6730000+07:00"
           },
           "modifiedDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Ngày sửa mới nhất",
+            "format": "date-time",
+            "example": "2020-02-25T13:39:04.6730000+07:00"
           },
           "localizers": {
             "type": "array",
