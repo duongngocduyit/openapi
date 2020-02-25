@@ -600,15 +600,15 @@
       }
     },
     "securitySchemes": {
-      "ClientId": {
+      "X-CLIENT-ID": {
         "type": "apiKey",
         "description": "ClientId needed to access the endpoints. X-CLIENT-ID: Bigin",
         "name": "X-CLIENT-ID",
         "in": "header"
       },
-      "ClientSecret": {
+      "X-CLIENT-SECRET": {
         "type": "apiKey",
-        "description": "ClientSecret needed to access the endpoints. X-CLIENT-ID: e9fd92b4e8a79b1c0b046ec770197f60",
+        "description": "ClientSecret needed to access the endpoints. X-CLIENT-SECRET: e9fd92b4e8a79b1c0b046ec770197f60",
         "name": "X-CLIENT-SECRET",
         "in": "header"
       }
@@ -616,8 +616,8 @@
   },
   "security": [
     {
-      "ClientId": [ ],
-      "ClientSecret": [ ]
+      "X-CLIENT-ID": [ ],
+      "X-CLIENT-SECRET": [ ]
     }
   ]
 }
