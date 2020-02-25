@@ -598,6 +598,24 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "API-KEY": {
+        "type": "apiKey",
+        "name": "X-API-KEY",
+        "in": "header"
+      },
+      "API-ID": {
+        "type": "apiKey",
+        "name": "X-APP-ID",
+        "in": "header"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "API-KEY": [ ],
+      "API-ID": [ ]
+    }
+  ]
 }
