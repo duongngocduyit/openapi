@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "B2B Admin API",
+    "title": "OB API",
     "version": "v1"
   },
   "paths": {
@@ -10,6 +10,8 @@
         "tags": [
           "Category"
         ],
+        "summary": "Get List category from modifiedDate.",
+        "description": "Sample request:\r\n\r\n    GET category/ListByModifiedDate\r\n    {        \r\n      \"firstName\": \"Mike\",\r\n      \"lastName\": \"Andrew\",\r\n      \"emailId\": \"Mike.Andrew@gmail.com\"        \r\n    }",
         "parameters": [
           {
             "name": "modifiedDate",
@@ -339,7 +341,7 @@
             "type": "string",
             "nullable": true
           },
-          "panentCode": {
+          "parentCode": {
             "type": "string",
             "nullable": true
           },
@@ -525,11 +527,6 @@
           }
         },
         "nullable": true
-      }
-    },
-    "securitySchemes": {
-      "oauth2": {
-        "type": "oauth2"
       }
     }
   }
