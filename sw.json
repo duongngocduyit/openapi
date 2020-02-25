@@ -231,7 +231,9 @@
         "properties": {
           "code": {
             "type": "string",
-            "nullable": true
+            "description": "The name of the product",
+            "nullable": true,
+            "example": "Men's basketball shoes"
           },
           "parentCode": {
             "type": "string",
