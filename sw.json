@@ -10,12 +10,13 @@
         "tags": [
           "Category"
         ],
-        "summary": "Get List category from modifiedDate.",
-        "description": "Sample request:\r\n\r\n    GET category/ListByModifiedDate\r\n    {        \r\n      \"firstName\": \"Mike\",\r\n      \"lastName\": \"Andrew\",\r\n      \"emailId\": \"Mike.Andrew@gmail.com\"        \r\n    }",
+        "summary": "Lấy danh sách những category có ngày modifiedDate lớn hơn hoặc bằng fromDate .",
+        "description": "Sample request:\r\n\r\n    GET Category/ListByModifiedDate\r\n\t{\r\n\t    \"fromDate\": \"2020-01-25T13:39:04.6730000+07:00\",\r\n\t}\r\n\t\r\nSample response:\r\n\r\n    [\r\n\t  {\r\n\t    \"code\": \"C0002\",\r\n\t    \"parentCode\": \"C0001\",\r\n\t    \"name\": \"Cà phê BMT\",\r\n\t    \"decscription\": \"Cà phê BMT đậm đà hương vị tự nhiên\",\r\n\t    \"order\": 100,\r\n\t    \"localizers\": [\r\n\t      {\r\n\t        \"langCode\": \"vi\",\r\n\t        \"name\": \"Name\",\r\n\t        \"value\": \"Cà phê sữa\"\r\n\t      }\r\n\t    ],\r\n\t    \"createdBy\": \"Ong_Thang\",\r\n\t    \"createdDate\": \"2020-01-25T13:39:04.6730000+07:00\",\r\n\t    \"modifiedDate\": \"2020-02-25T13:39:04.6730000+07:00\"\r\n\t  }\r\n\t]",
         "parameters": [
           {
-            "name": "modifiedDate",
+            "name": "fromDate",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "string",
               "format": "date-time"
@@ -36,6 +37,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
@@ -45,6 +49,8 @@
         "tags": [
           "Category"
         ],
+        "summary": "Lấy danh sách những category có ngày createdDate lớn hơn hoặc bằng fromDate .",
+        "description": "Sample request:\r\n\r\n    GET Category/ListByCreatedDate\r\n\t{\r\n\t    \"fromDate\": \"2020-01-25T13:39:04.6730000+07:00\",\r\n\t}\r\n\t\r\nSample response:\r\n\r\n    [\r\n\t  {\r\n\t    \"code\": \"C0002\",\r\n\t    \"parentCode\": \"C0001\",\r\n\t    \"name\": \"Cà phê BMT\",\r\n\t    \"decscription\": \"Cà phê BMT đậm đà hương vị tự nhiên\",\r\n\t    \"order\": 100,\r\n\t    \"localizers\": [\r\n\t      {\r\n\t        \"langCode\": \"vi\",\r\n\t        \"name\": \"Name\",\r\n\t        \"value\": \"Cà phê sữa\"\r\n\t      }\r\n\t    ],\r\n\t    \"createdBy\": \"Ong_Thang\",\r\n\t    \"createdDate\": \"2020-01-25T13:39:04.6730000+07:00\",\r\n\t    \"modifiedDate\": \"2020-02-25T13:39:04.6730000+07:00\"\r\n\t  }\r\n\t]",
         "parameters": [
           {
             "name": "createdDate",
@@ -69,6 +75,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
